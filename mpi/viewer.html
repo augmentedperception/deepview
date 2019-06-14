@@ -686,7 +686,7 @@ function initFromParameters() {
   loadScene(layerzero, num_layers, width, height, near, far, fov);
 
   // Optional parameters to control other things.
-  moveScale = parseFloat(params.get('mv') || 2.0);
+  moveScale = parseFloat(params.get('mv') || 1.5);
   setMoveMode(params.get('move') || 0);
   showDepth(params.get('depth') || 0);
   setViewSize(params.get('scale') || 1);
