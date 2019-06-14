@@ -360,7 +360,7 @@ const pose = {
   offset: 0
 }
 
-let moveScale = 1.0;
+let moveScale = 4.5;
 
 function setPose() {
   const mpi = document.querySelector('.mpi');
@@ -686,7 +686,7 @@ function initFromParameters() {
   loadScene(layerzero, num_layers, width, height, near, far, fov);
 
   // Optional parameters to control other things.
-  moveScale = parseFloat(params.get('mv') || 1.0);
+  moveScale = parseFloat(params.get('mv') || 2.0);
   setMoveMode(params.get('move') || 0);
   showDepth(params.get('depth') || 0);
   setViewSize(params.get('scale') || 1);
