@@ -1,1 +1,61 @@
-My brand new web page!
+<!doctype html><meta charset=utf-8>
+<title>DeepView supplementary pages</title>
+<style>
+body {
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
+  background: #bbb;
+  color: #000;
+  padding: 20px 50px 0 200px;
+}
+h2 {
+  margin-top: 50px;
+}
+img {
+  box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .5);
+  margin: 0px 10px 10px 0;
+}
+.ib {
+  display: inline-block;
+  margin-right: 20px;
+}
+</style>
+
+<h1>DeepView supplementary pages</h1>
+<hr>
+
+<h2><a href="video.mp4">Video</a></h2>
+Video with synthesized fly-throughs and depth visualizations of the scenes shown in the paper.
+<p>
+<hr>
+
+<h2>Example MPIs in our interactive viewer</h2>
+
+We present several scenes in an interactive viewer. <br>
+Note that these were made with a 16-view version of the model in the paper with a sparsity penalty to reduce unneeded content on occluded layers.<br>
+The Chrome browser is recommended.
+<p>
+<div class=ib><a href="mpi/viewer.html?n=48&s=1260,800&url=scene_009/rgba_$$.png"><img src="thumbs/scene_009.jpg"><br>View scene 9</a></div>
+<div class=ib><a href="mpi/viewer.html?n=48&s=1260,800&url=scene_023/rgba_$$.png"><img src="thumbs/scene_023.jpg"><br>View scene 23</a></div>
+<div class=ib><a href="mpi/viewer.html?n=48&s=1260,800&url=scene_052/rgba_$$.png"><img src="thumbs/scene_052.jpg"><br>View scene 52</a></div>
+<div class=ib><a href="mpi/viewer.html?n=48&s=1260,800&url=scene_056/rgba_$$.png"><img src="thumbs/scene_056.jpg"><br>View scene 56</a></div>
+<div class=ib><a href="mpi/viewer.html?n=48&s=1260,800&url=scene_063/rgba_$$.png"><img src="thumbs/scene_063.jpg"><br>View scene 63</a></div>
+<p>
+Here are brief <a href="mpi/instructions.png">instructions</a> for using the viewer.
+<br><br>
+<h2>Comparison with Soft3D and Zhou et al. on <i>Spaces</i> dataset</h2>
+<a href="results_spaces/index.html"><img src="thumbs/results_spaces.png"></a>
+<br>View a <a href="results_spaces/index.html">comparison</a> on test scenes for 4-view (large baseline) case.
+
+<h2>Comparison with Soft3D on Kalantari et al. dataset.</h2>
+<a href="results_kalantari/index.html"><img src="thumbs/results_kalantari.png"></a>
+<br>View a <a href="results_kalantari/index.html">comparison</a> on test scenes from Kalantari et al.
+
+<h2>Other studies</h2>
+Click to see results from 
+<a href="ablation/index.html">ablation of gradient components</a>,
+<p>
+or from <a href="iteration/index.html">varying the number of LGD iterations.</a>
+<p>
+<hr>
+<h2><a href="training_details.pdf">Extended training details</a></h2>
+Describes in more detail the methods used to reduce RAM during training and inference, as well as the training and loss hyperparameters.

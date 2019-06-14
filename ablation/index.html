@@ -1,0 +1,212 @@
+<!doctype html><meta charset=utf-8>
+<title>Ablation study</title>
+
+<h2>Ablation study</h2>
+Here we show rendered views on four scenes, using varying combinations of the gradient components. See Table 4 of the paper for details.
+<p>
+Hover over the labels at the left to select which output to view. Hold mouse down anywhere to flip to ground truth for comparison.<br><br>
+
+<style>
+body {
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
+  background: #bbb;
+  color: #000;
+  padding: 20px 0 0 200px;
+}
+
+.label {
+  white-space: nowrap;
+  display: inline-block;
+  background: #ddd;
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+#controls {
+  position: fixed;
+  left: 20px;
+  width: 10px;
+}
+
+#controls.s1 .label:nth-child(1),
+#controls.s2 .label:nth-child(2),
+#controls.s3 .label:nth-child(3),
+#controls.s4 .label:nth-child(4),
+#controls.s5 .label:nth-child(5),
+#controls.s6 .label:nth-child(6),
+#controls.s7 .label:nth-child(7),
+#controls.s8 .label:nth-child(8),
+#controls.s9 .label:nth-child(9),
+#controls.s10 .label:nth-child(10) {
+  background: #48a;
+  color: #fff;
+}
+
+#examples > div {
+  display: inline-block;
+  position: relative;
+  width: 480px;
+  height: 274px;
+  background: #444;
+}
+
+#examples > div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+#examples > div::after,
+#examples > div span {
+  display: block;
+  position: absolute;
+  color: #fff;
+  background: #000;
+  opacity: .5;  
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  top: 0;
+}
+
+#examples > div::after {
+  left: 0;
+  padding: 0 3px 0 1px;
+  border-bottom-right-radius: 4px;
+}
+
+#examples > div span {
+  right: 0;
+  padding: 0 1px 0 3px;
+  border-bottom-left-radius: 4px;
+}
+
+#examples.s1 > div::after { content: "ground truth"; }
+#examples.s2 > div::after { content: "RTA (all)"; }
+#examples.s3 > div::after { content: "R-A"; }
+#examples.s4 > div::after { content: "RT-"; }
+#examples.s5 > div::after { content: "-TA"; }
+#examples.s6 > div::after { content: "R--"; }
+#examples.s7 > div::after { content: "--A"; }
+#examples.s8 > div::after { content: "𝝯L2"; }
+#examples.s9 > div::after { content: "-T-"; }
+#examples.s10 > div::after { content: "---"; }
+
+#examples.s1 > div > img:nth-child(1),
+#examples.s2 > div > img:nth-child(2),
+#examples.s3 > div > img:nth-child(3),
+#examples.s4 > div > img:nth-child(4),
+#examples.s5 > div > img:nth-child(5),
+#examples.s6 > div > img:nth-child(6),
+#examples.s7 > div > img:nth-child(7),
+#examples.s8 > div > img:nth-child(8),
+#examples.s9 > div > img:nth-child(9),
+#examples.s10 > div > img:nth-child(10) {
+  visibility: inherit;
+}
+
+</style>
+
+<div id=controls class=s1>
+  <div class=label onmouseenter="over(1)">Ground truth</div>
+  <div class=label onmouseenter="over(2)"><span style="font-family:monospace">RTA</span> (all components)</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(3)">R-A</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(4)">RT-</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(5)">-TA</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(6)">R--</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(7)">--A</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(8)">𝝯L2</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(9)">-T-</div>
+  <div class=label style="font-family:monospace" onmouseenter="over(10)">---</div>
+</div>
+
+<div id=examples class=s1>
+<div>
+  <img src="scene_056/ground_truth.png">
+  <img src="scene_056/none.png">
+  <img src="scene_056/transmittance.png">
+  <img src="scene_056/accumulated_over.png">
+  <img src="scene_056/rendered_image.png">
+  <img src="scene_056/transmittance.accumulated_over.png">
+  <img src="scene_056/rendered_image.transmittance.png">
+  <img src="scene_056/true_gradient.png">
+  <img src="scene_056/rendered_image.accumulated_over.png">
+  <img src="scene_056/all.png">
+  <span>scene_056</span>
+</div>
+<div>
+  <img src="scene_062/ground_truth.png">
+  <img src="scene_062/none.png">
+  <img src="scene_062/transmittance.png">
+  <img src="scene_062/accumulated_over.png">
+  <img src="scene_062/rendered_image.png">
+  <img src="scene_062/transmittance.accumulated_over.png">
+  <img src="scene_062/rendered_image.transmittance.png">
+  <img src="scene_062/true_gradient.png">
+  <img src="scene_062/rendered_image.accumulated_over.png">
+  <img src="scene_062/all.png">
+  <span>scene_062</span>
+</div>
+<br>
+<div>
+  <img src="scene_063/ground_truth.png">
+  <img src="scene_063/none.png">
+  <img src="scene_063/transmittance.png">
+  <img src="scene_063/accumulated_over.png">
+  <img src="scene_063/rendered_image.png">
+  <img src="scene_063/transmittance.accumulated_over.png">
+  <img src="scene_063/rendered_image.transmittance.png">
+  <img src="scene_063/true_gradient.png">
+  <img src="scene_063/rendered_image.accumulated_over.png">
+  <img src="scene_063/all.png">
+  <span>scene_063</span>
+</div>
+<div>
+  <img src="scene_073/ground_truth.png">
+  <img src="scene_073/none.png">
+  <img src="scene_073/transmittance.png">
+  <img src="scene_073/accumulated_over.png">
+  <img src="scene_073/rendered_image.png">
+  <img src="scene_073/transmittance.accumulated_over.png">
+  <img src="scene_073/rendered_image.transmittance.png">
+  <img src="scene_073/true_gradient.png">
+  <img src="scene_073/rendered_image.accumulated_over.png">
+  <img src="scene_073/all.png">
+  <span>scene_073</span>
+</div>
+</div>
+
+
+<script>
+
+var selected = 1;
+function show(n) {
+  var examples = document.getElementById('examples');
+  var controls = document.getElementById('controls');
+  examples.className = 's' + n;
+  controls.className = 's' + n;
+}
+function down() {
+  show(1);
+}
+function up() {
+  show(selected);
+}
+function over(n) {
+  selected = n;
+  show(n);
+}
+document.body.addEventListener('mousedown', down);
+document.body.addEventListener('mouseup', up);
+document.body.addEventListener('mouseleave', up);
+</script>
+

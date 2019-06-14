@@ -1,0 +1,239 @@
+<!doctype html><meta charset=utf-8>
+<title>Comparison with Soft3D and Zhou et al.</title>
+
+<h2>Comparison with Soft3D and Zhou et al.</h2>
+Here we show rendered views from Soft3D, Zhou<sup>+</sup> (an adaptation of the method described in [1]), and from our method on the Spaces dataset, using the 4-view (large baseline) setup.
+<p>
+As discussed in the paper, Zhou<sup>+</sup> used 40 planes, increasing the planes further was not possible,
+The DeepView results below were generated with the 80 plane version of the model.
+<p>
+Hover over the labels at the left to select which output to view. Hold mouse down anywhere to flip to ground truth for comparison.<br><br>
+
+[1] 	T. Zhou, R. Tucker, J. Flynn, G. Fyffe, and N. Snavely. Stereo magnification: Learning view synthesis using multiplane images. In <i>Proc. SIGGRAPH</i>, 2018.
+
+In SIGGRAPH 2018
+<style>
+body {
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
+  background: #bbb;
+  color: #000;
+  padding: 20px 0 0 200px;
+}
+
+.label {
+  white-space: nowrap;
+  display: inline-block;
+  background: #ddd;
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+#controls {
+  position: fixed;
+  left: 20px;
+  width: 10px;
+}
+
+#controls.s1 .label:nth-child(1),
+#controls.s2 .label:nth-child(2),
+#controls.s3 .label:nth-child(3),
+#controls.s4 .label:nth-child(4),
+#controls.s5 .label:nth-child(5),
+#controls.s6 .label:nth-child(6) {
+  background: #48a;
+  color: #fff;
+}
+
+#examples > div {
+  display: inline-block;
+  position: relative;
+  width: 768px;
+  height: 449px;
+  background: #444;
+}
+
+#examples > div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+#examples > div::after,
+#examples > div span {
+  display: block;
+  position: absolute;
+  color: #fff;
+  background: #000;
+  opacity: .5;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  top: 0;
+}
+
+#examples > div::after {
+  left: 0;
+  padding: 0 3px 0 1px;
+  border-bottom-right-radius: 4px;
+}
+
+#examples > div span {
+  right: 0;
+  padding: 0 1px 0 3px;
+  border-bottom-left-radius: 4px;
+}
+
+#examples.s1 > div::after { content: "ground truth"; }
+#examples.s2 > div::after { content: "soft3d"; }
+#examples.s3 > div::after { content: "deepview"; }
+#examples.s4 > div::after { content: "zhou+"; }
+#examples.s5 > div::after { content: "deepview (depth)"; }
+#examples.s6 > div::after { content: "zhou+ (depth)"; }
+
+#examples.s1 > div > img:nth-child(1),
+#examples.s2 > div > img:nth-child(2),
+#examples.s3 > div > img:nth-child(3),
+#examples.s4 > div > img:nth-child(4),
+#examples.s5 > div > img:nth-child(5),
+#examples.s6 > div > img:nth-child(6) {
+  visibility: inherit;
+}
+
+</style>
+
+<div id=controls class=s1>
+  <div class=label onmouseenter="over(1)">Ground truth</div>
+  <div class=label onmouseenter="over(2)">Soft3D</div>
+  <div class=label onmouseenter="over(3)">DeepView</div>
+  <div class=label onmouseenter="over(4)">Zhou<sup>+</sup> </div>
+  <div class=label onmouseenter="over(5)">DeepView (depth)</div>
+  <div class=label onmouseenter="over(6)">Zhou<sup>+</sup> (depth)</div>
+</div>
+
+<div id=examples class=s1>
+<div>
+  <img src="large_quad/scene_000/ground_truth_06.png">
+  <img src="large_quad/scene_000/soft3d_synth_06.png">
+  <img src="large_quad/scene_000/deep_space_synth_06.png">
+  <img src="large_quad/scene_000/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_000/deep_space_depth_06.png">
+  <img src="large_quad/scene_000/stereo_mag_depth_06.png">
+  <span>scene_000</span>
+</div>
+<div>
+  <img src="large_quad/scene_009/ground_truth_06.png">
+  <img src="large_quad/scene_009/soft3d_synth_06.png">
+  <img src="large_quad/scene_009/deep_space_synth_06.png">
+  <img src="large_quad/scene_009/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_009/deep_space_depth_06.png">
+  <img src="large_quad/scene_009/stereo_mag_depth_06.png">
+  <span>scene_009</span>
+</div>
+<div>
+  <img src="large_quad/scene_010/ground_truth_06.png">
+  <img src="large_quad/scene_010/soft3d_synth_06.png">
+  <img src="large_quad/scene_010/deep_space_synth_06.png">
+  <img src="large_quad/scene_010/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_010/deep_space_depth_06.png">
+  <img src="large_quad/scene_010/stereo_mag_depth_06.png">
+  <span>scene_010</span>
+</div>
+<div>
+  <img src="large_quad/scene_023/ground_truth_06.png">
+  <img src="large_quad/scene_023/soft3d_synth_06.png">
+  <img src="large_quad/scene_023/deep_space_synth_06.png">
+  <img src="large_quad/scene_023/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_023/deep_space_depth_06.png">
+  <img src="large_quad/scene_023/stereo_mag_depth_06.png">
+  <span>scene_023</span>
+</div>
+<div>
+  <img src="large_quad/scene_024/ground_truth_06.png">
+  <img src="large_quad/scene_024/soft3d_synth_06.png">
+  <img src="large_quad/scene_024/deep_space_synth_06.png">
+  <img src="large_quad/scene_024/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_024/deep_space_depth_06.png">
+  <img src="large_quad/scene_024/stereo_mag_depth_06.png">
+  <span>scene_024</span>
+</div>
+<div>
+  <img src="large_quad/scene_052/ground_truth_06.png">
+  <img src="large_quad/scene_052/soft3d_synth_06.png">
+  <img src="large_quad/scene_052/deep_space_synth_06.png">
+  <img src="large_quad/scene_052/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_052/deep_space_depth_06.png">
+  <img src="large_quad/scene_052/stereo_mag_depth_06.png">
+  <span>scene_052</span>
+</div>
+<div>
+  <img src="large_quad/scene_056/ground_truth_06.png">
+  <img src="large_quad/scene_056/soft3d_synth_06.png">
+  <img src="large_quad/scene_056/deep_space_synth_06.png">
+  <img src="large_quad/scene_056/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_056/deep_space_depth_06.png">
+  <img src="large_quad/scene_056/stereo_mag_depth_06.png">
+  <span>scene_056</span>
+</div>
+<div>
+  <img src="large_quad/scene_062/ground_truth_06.png">
+  <img src="large_quad/scene_062/soft3d_synth_06.png">
+  <img src="large_quad/scene_062/deep_space_synth_06.png">
+  <img src="large_quad/scene_062/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_062/deep_space_depth_06.png">
+  <img src="large_quad/scene_062/stereo_mag_depth_06.png">
+  <span>scene_062</span>
+</div>
+<div>
+  <img src="large_quad/scene_063/ground_truth_06.png">
+  <img src="large_quad/scene_063/soft3d_synth_06.png">
+  <img src="large_quad/scene_063/deep_space_synth_06.png">
+  <img src="large_quad/scene_063/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_063/deep_space_depth_06.png">
+  <img src="large_quad/scene_063/stereo_mag_depth_06.png">
+  <span>scene_063</span>
+</div>
+<div>
+  <img src="large_quad/scene_073/ground_truth_06.png">
+  <img src="large_quad/scene_073/soft3d_synth_06.png">
+  <img src="large_quad/scene_073/deep_space_synth_06.png">
+  <img src="large_quad/scene_073/stereo_mag_synth_06.png">
+  <img src="large_quad/scene_073/deep_space_depth_06.png">
+  <img src="large_quad/scene_073/stereo_mag_depth_06.png">
+  <span>scene_073</span>
+</div>
+</div>
+
+
+<script>
+
+var selected = 1;
+function show(n) {
+  var examples = document.getElementById('examples');
+  var controls = document.getElementById('controls');
+  examples.className = 's' + n;
+  controls.className = 's' + n;
+}
+function down() {
+  show(1);
+}
+function up() {
+  show(selected);
+}
+function over(n) {
+  selected = n;
+  show(n);
+}
+document.body.addEventListener('mousedown', down);
+document.body.addEventListener('mouseup', up);
+document.body.addEventListener('mouseleave', up);
+</script>
+
