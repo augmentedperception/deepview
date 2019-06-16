@@ -37,6 +37,16 @@
         margin-right: 0;
         font-weight: normal;
         }
+    h4 { 
+        display: block;
+        font-size: 1.4em;
+        margin-top: 0.0em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
     img {
       margin: 0px 10px 10px 0;
     }
@@ -51,6 +61,28 @@
       display: inline-block;
       margin-right: 20px;
     }
+    .footer {
+	margin: 20px 0px 50px 0px;
+    width: 100%;
+    height: 100px;
+    float: center;
+	position: relative;
+    min-width: 800px;
+    }
+    .footerG {
+	margin: 20px 0px 0px 0px;
+    width: 200px;
+    height: 100px;
+    float: left;
+	position: relative;
+    }
+    .footerD {
+	margin: 20px 100px 0px 0px;
+    width: 300px;
+    height: 100px;
+    float: right;
+	position: relative;
+    }
     .main {
 	margin: 20px 80px 50px 0px;
     width: 100%;
@@ -59,18 +91,20 @@
     }
     .superhero {
     width: 100%;
-    height: 500px;
+    height: 600px;
+    position: relative;
+    min-width: 800px;
     }
-    .hero {
-	margin: 50px 20px 0px 0px;
-    width: 500px;
+    .title {
+	margin: 50px 0px 0px 0px;
+    width: 400px;
     height: 500px;
     float: left;
 	position: relative;
     }
     .paper {
-	margin: 120px 100px 0px 0px;
-    width: 100px;
+	margin: 150px 100px 0px 0px;
+    width: 200px;
     height: 500px;
     float: right;
 	position: relative;
@@ -101,7 +135,7 @@
 	font-size: 20px;
 	font-weight: 300;
 	margin-top: 0px;
-	line-height: 30px;
+	line-height: 20px;
     display: inline-block;
     }
     .video-container {
@@ -123,25 +157,33 @@
 </style>
 
 <div class="superhero">
-    <div class="hero">
-        <h1 class="name"><strong>DeepView</strong> View synthesis with learned gradient descent</h1><br>
+    <div class="title">
+        <h1 class="name"><strong>DeepView</strong><br>View synthesis with learned gradient descent</h1><br>
         <h2 class="names">John Flynn</h2>
-        <span class="email"><a href = "mailto: jflynn@google.com" class="pagelink">jflynn@google.com</a></span>
+        <span class="email"><a href = "mailto: jflynn@google.com" class="pagelink">jflynn@google.com</a></span><br>
+        
         <h2 class="names">Michael Broxton</h2>
-        <span class="email"><a href = "mailto: broxton@google.com" class="pagelink"> broxton@google.com</a></span>
+        <span class="email"><a href = "mailto: broxton@google.com" class="pagelink"> broxton@google.com</a></span><br>
+        
         <h2 class="names">Paul Debevec</h2>
-        <span class="email"><a href = "mailto: debevec@google.com" class="pagelink">debevec@google.com</a></span>
+        <span class="email"><a href = "mailto: debevec@google.com" class="pagelink">debevec@google.com</a></span><br>
+        
         <h2 class="names">Matthew DuVall</h2>
-        <span class="email"><a href = "mailto: matthewduvall@google.com" class="pagelink">matthewduvall@google.com</a></span>
+        <span class="email"><a href = "mailto: matthewduvall@google.com" class="pagelink">matthewduvall@google.com</a></span><br>
+        
         <h2 class="names">Graham Fyffe</h2>
-        <span class="email"><a href = "mailto: fyffe@google.com" class="pagelink">fyffe@google.com</a></span>
+        <span class="email"><a href = "mailto: fyffe@google.com" class="pagelink">fyffe@google.com</a></span><br>
+        
         <h2 class="names">Ryan Overbeck</h2>
-        <span class="email"><a href = "mailto: rover@google.com" class="pagelink">rover@google.com</a></span>
+        <span class="email"><a href = "mailto: rover@google.com" class="pagelink">rover@google.com</a></span><br>
+        
         <h2 class="names">Noah Snavely</h2>
-        <span class="email"><a href = "mailto: snavely@google.com" class="pagelink">snavely@google.com</a></span>
+        <span class="email"><a href = "mailto: snavely@google.com" class="pagelink">snavely@google.com</a></span><br>
+        
         <h2 class="names">Richard Tucker</h2>
-        <span class="email"><a href = "mailto: richardt@google.com" class="pagelink">richardt@google.com</a></span>
-        <h2>Google Inc.</h2>
+        <span class="email"><a href = "mailto: richardt@google.com" class="pagelink">richardt@google.com</a></span><br>
+        
+        <h4>Google Inc.</h4>
     </div>
     
     <div class="paper">
@@ -208,6 +250,12 @@
     <br><br><br>
 </div>
 <br>
-<center>
-<a href="https://ai.google/"><img src="thumbs/logos.png" class="logos"></a>
-</center>
+
+<div class="footer">
+    <div class="footerG">
+        <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
+    </div>
+    <div class="footerD">
+        <a href="https://vr.google.com/daydream/"><img src="thumbs/daydream.png" class="logos"></a>
+    </div>
+</div>
