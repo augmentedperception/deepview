@@ -1,0 +1,305 @@
+<!doctype html><meta charset=utf-8>
+<title>DeepView: View synthesis with learned gradient descent</title>
+
+<style>
+    body {
+      font-family: Roboto, "Roboto", sans-serif;
+      background: #F0F0F0;
+      color: #696969;
+      padding: 0px 40px 40px 40px;
+    }
+    h1 { 
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h2 { 
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h3 { 
+        display: block;
+        font-size: 1em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        }
+    h4 { 
+        display: block;
+        font-size: 1.4em;
+        margin-top: 0.0em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    img {
+      margin: 0px 10px 10px 0;
+    }
+    .img {
+      box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);
+      margin: 0px 10px 10px 0;
+    }
+    .logos {
+      margin: 0px 10px 10px 0;
+    }
+    .ib {
+      display: inline-block;
+      margin: 00px 20px 20px 0px;
+    }
+    .footer {
+	margin: 20px 0px 50px 0px;
+    width: 100%;
+    height: 100px;
+    float: center;
+	position: relative;
+    min-width: 800px;
+    }
+    .footerG {
+	margin: 20px 0px 0px 0px;
+    width: 200px;
+    height: 100px;
+    float: left;
+	position: relative;
+    }
+    .footerD {
+	margin: 20px 100px 0px 0px;
+    width: 300px;
+    height: 100px;
+    float: right;
+	position: relative;
+    }
+    .main {
+	margin: 20px 80px 50px 0px;
+    width: 100%;
+    float: left;
+	position: relative;
+    }
+    .superhero {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    min-width: 800px;
+    }
+    .title {
+	margin: 50px 0px 0px 0px;
+    width: 400px;
+    height: 500px;
+    float: left;
+	position: relative;
+    }
+    .paper {
+	margin: 150px 100px 0px 0px;
+    width: 200px;
+    height: 500px;
+    float: right;
+	position: relative;
+    }
+    h1.name {
+	font-size: 40px;
+	font-weight: 300;
+    margin-bottom: 10px;
+	display: inline-block;
+    }
+    .email {
+	display: block;
+	font-size: 19px;
+	font-weight: 300;
+	color: #81899C;
+	margin-top: 0px;
+    display: inline-block;
+    }
+
+    .lead {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0px;
+	line-height: 30px;
+    display: inline-block;
+    }
+    .names {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0px;
+	line-height: 20px;
+    display: inline-block;
+    }
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    }
+    .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+    a.pagelink:link,
+    a.pagelink:visited,
+    a.pagelink:active { color: #81899C; text-decoration: none; }
+    a.pagelink:hover { color: #006699; text-decoration: underline; }
+</style>
+
+<div class="superhero">
+    <div class="title">
+        <h1 class="name"><strong>DeepView</strong><br>View Synthesis with Learned Gradient Descent</h1><br>
+        <h2 class="names">John Flynn</h2>
+        <span class="email"><a href = "mailto: jflynn@google.com" class="pagelink">jflynn@google.com</a></span><br>
+        
+        <h2 class="names">Michael Broxton</h2>
+        <span class="email"><a href = "mailto: broxton@google.com" class="pagelink"> broxton@google.com</a></span><br>
+        
+        <h2 class="names">Paul Debevec</h2>
+        <span class="email"><a href = "mailto: debevec@google.com" class="pagelink">debevec@google.com</a></span><br>
+        
+        <h2 class="names">Matthew DuVall</h2>
+        <span class="email"><a href = "mailto: matthewduvall@google.com" class="pagelink">matthewduvall@google.com</a></span><br>
+        
+        <h2 class="names">Graham Fyffe</h2>
+        <span class="email"><a href = "mailto: fyffe@google.com" class="pagelink">fyffe@google.com</a></span><br>
+        
+        <h2 class="names">Ryan Overbeck</h2>
+        <span class="email"><a href = "mailto: rover@google.com" class="pagelink">rover@google.com</a></span><br>
+        
+        <h2 class="names">Noah Snavely</h2>
+        <span class="email"><a href = "mailto: snavely@google.com" class="pagelink">snavely@google.com</a></span><br>
+        
+        <h2 class="names">Richard Tucker</h2>
+        <span class="email"><a href = "mailto: richardt@google.com" class="pagelink">richardt@google.com</a></span><br>
+        
+        <h4>Google Inc.</h4>
+    </div>
+    
+    <div class="paper">
+        <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Flynn_DeepView_View_Synthesis_With_Learned_Gradient_Descent_CVPR_2019_paper.pdf"><img src="thumbs/paper.png" class="img" style="width:300px;height:373px;"></a> Click to view the paper.
+    </div>
+</div>
+
+<div class="main">
+    <h2 class="section-title">Technical Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UD7I9gXIVsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> 
+    <br>
+    Video with synthesized fly-throughs and depth visualizations of the scenes shown in the paper.
+    <p>
+</div>
+
+<div class="main">
+    <h2>Example MPIs in our interactive viewer</h2>
+
+    We present several scenes in an interactive viewer. <br>
+    Note that these were made with a 16-view version of the model in the paper with a sparsity penalty to reduce unneeded content on occluded layers.<br>
+    The Chrome browser is recommended.
+    <p>
+
+    <center>
+        <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_009/rgba_$$.png"><img src="thumbs/scene_009.jpg" class="img"></a><br>Scene 9<br>
+            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_009/rgba_$$.png">low</a> | 
+            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_009/rgba_$$.png">high</a>
+        </div>
+        
+         <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_010/rgba_$$.png"><img src="thumbs/scene_010.jpg" class="img"></a><br>Scene 10<br>
+            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_010/rgba_$$.png">low</a> | 
+            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_010/rgba_$$.png">high</a>
+        </div>
+        
+        <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_023/rgba_$$.png"><img src="thumbs/scene_023.jpg" class="img"></a><br>Scene 23<br>
+            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_023/rgba_$$.png">low</a> | 
+            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_023/rgba_$$.png">high</a>
+        </div>
+        
+         <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_052/rgba_$$.png"><img src="thumbs/scene_052.jpg" class="img"></a><br>Scene 52<br>
+            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_052/rgba_$$.png">low</a> | 
+            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_052/rgba_$$.png">high</a>
+        </div>
+        
+        <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_056/rgba_$$.png"><img src="thumbs/scene_056.jpg" class="img"></a><br>Scene 56<br>
+            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_056/rgba_$$.png">low</a> | 
+            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_056/rgba_$$.png">high</a>
+        </div>
+        
+         <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_063/rgba_$$.png"><img src="thumbs/scene_063.jpg" class="img"></a><br>Scene 63<br>
+            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_063/rgba_$$.png">low</a> | 
+            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_063/rgba_$$.png">high</a>
+        </div>
+    
+    </center>
+
+    <p>
+    Here are brief <a href="mpi/instructions.png">instructions</a> for using the viewer.
+</div>
+    
+<div class="main">
+    <h2>Comparison with Soft3D and Zhou et al. on <i>Spaces</i> dataset</h2>
+    <center>
+    <a href="results_spaces/index.html"><img src="thumbs/results_spaces.png" class="img"></a>
+    <br>View a <a href="results_spaces/index.html">comparison</a> on test scenes for 4-view (large baseline) case.
+    </center>
+
+    <br><br>
+
+    <h2>Comparison with Soft3D on Kalantari et al. dataset</h2>
+    <center>
+    <a href="results_kalantari/index.html"><img src="thumbs/results_kalantari.png" class="img"></a>
+    <br>View a <a href="results_kalantari/index.html">comparison</a> on test scenes from Kalantari et al.
+    </center>
+</div>
+
+<br><br><br><br>
+
+<div class="main">
+    <h2>Other Studies</h2>
+    Click to see results from 
+    <a href="ablation/index.html">ablation of gradient components</a>, or from <a href="iteration/index.html">varying the number of LGD iterations.</a>
+    <br><br><br>
+    <h2>Extended Training Details</h2>
+    Click to see <a href="training_details.pdf">details</a> of the methods used to reduce RAM during training and inference, as well as the training and loss hyperparameters.
+    <br><br><br>
+</div>
+<br>
+
+<div class="main">
+    <h2>VR@50 2019 Light Fields</h2>
+
+    View some light field stills from last year's VR@50 in VR<br>
+    These additional light fields will be powered by the <a href="http://bit.ly/lightfieldsapp" target="_blank">Welcome to Light Fields</a> app.<br><br><br>
+    <p>
+
+    <center>
+        <div class=ib><img src="thumbs/vr50_02.jpg" class="img"><br>
+        </div>
+        
+         <div class=ib><img src="thumbs/vr50_04.jpg" class="img"><br>
+        </div>
+    
+    </center>
+
+    <p>
+    Download the additional light fields <a href="releases/latest/vr50.zip">here</a>.
+</div>
+
+<div class="footer">
+    <div class="footerG">
+        <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
+    </div>
+    <div class="footerD">
+        <a href="https://vr.google.com/daydream/"><img src="thumbs/daydream.png" class="logos"></a>
+    </div>
+</div>
