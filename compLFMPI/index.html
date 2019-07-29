@@ -1,0 +1,231 @@
+<!doctype html><meta charset=utf-8>
+<title>Compositing Light field Video Using Multiplane Images</title>
+
+<style>
+    body {
+      font-family: Roboto, "Roboto", sans-serif;
+      background: #F0F0F0;
+      color: #696969;
+      padding: 0px 40px 40px 40px;
+    }
+    h1 { 
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h2 { 
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    h3 { 
+        display: block;
+        font-size: 1em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        }
+    h4 { 
+        display: block;
+        font-size: 1.4em;
+        margin-top: 0.0em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: normal;
+        color: #000;
+        }
+    img {
+      margin: 0px 10px 10px 0;
+    }
+    .img {
+      box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, .15);
+      margin: 0px 10px 10px 0;
+    }
+    .logos {
+      margin: 0px 10px 10px 0;
+    }
+    .ib {
+      display: inline-block;
+      margin: 00px 20px 20px 0px;
+    }
+    .footer {
+	margin: 20px 0px 50px 0px;
+    width: 100%;
+    height: 100px;
+    float: center;
+	position: relative;
+    min-width: 800px;
+    }
+    .footerG {
+	margin: 20px 0px 0px 0px;
+    width: 200px;
+    height: 100px;
+    float: left;
+	position: relative;
+    }
+    .footerD {
+	margin: 20px 100px 0px 0px;
+    width: 300px;
+    height: 100px;
+    float: right;
+	position: relative;
+    }
+    .main {
+	margin: 20px 80px 20px 0px;
+    width: 100%;
+    float: left;
+	position: relative;
+    }
+    .superhero {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    min-width: 800px;
+    }
+    .title {
+	margin: 50px 0px 0px 0px;
+    width: 400px;
+    height: 450px;
+    float: left;
+	position: relative;
+    }
+    .paper {
+	margin: 150px 100px 0px 0px;
+    width: 200px;
+    height: 500px;
+    float: right;
+	position: relative;
+    }
+    .poster {
+	margin: 80px 200px 0px 0px;
+    width: 300px;
+    height: 450px;
+    float: right;
+	position: relative;
+    }
+    .posterPaper {
+	margin: 150px 100px 0px 0px;
+    width: 700px;
+    height: 500px;
+    float: right;
+	position: relative;
+    }
+    h1.name {
+	font-size: 40px;
+	font-weight: 300;
+    margin-bottom: 10px;
+	display: inline-block;
+    }
+    .email {
+	display: block;
+	font-size: 19px;
+	font-weight: 300;
+	color: #81899C;
+	margin-top: 0px;
+    display: inline-block;
+    }
+
+    .lead {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0px;
+	line-height: 30px;
+    display: inline-block;
+    }
+    .names {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0px;
+	line-height: 20px;
+    display: inline-block;
+    }
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    }
+    .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
+    a.pagelink:link,
+    a.pagelink:visited,
+    a.pagelink:active { color: #81899C; text-decoration: none; }
+    a.pagelink:hover { color: #006699; text-decoration: underline; }
+</style>
+
+<div class="superhero">
+    <div class="title">
+        <h1 class="name"><strong>Compositing Light Field Video</strong><br>Using Multiplane Images</h1><br>
+        
+        <h2 class="names">Matthew DuVall</h2>
+        <span class="email"><a href = "mailto: matthewduvall@google.com" class="pagelink">matthewduvall@google.com</a></span><br>
+        
+        <h2 class="names">John Flynn</h2>
+        <span class="email"><a href = "mailto: jflynn@google.com" class="pagelink">jflynn@google.com</a></span><br>
+        
+        <h2 class="names">Michael Broxton</h2>
+        <span class="email"><a href = "mailto: broxton@google.com" class="pagelink"> broxton@google.com</a></span><br>
+        
+        <h2 class="names">Paul Debevec</h2>
+        <span class="email"><a href = "mailto: debevec@google.com" class="pagelink">debevec@google.com</a></span><br>
+        
+        <h4>Google Inc.</h4>
+    </div>
+    
+    <div class="poster">
+        <a href="content/compositingLightFieldVideoUsingMPIs_poster.pdf"><img src="thumbs/poster.png" class="img" style="width:500px;height:380px;"></a>Click to view the poster.
+    </div>
+</div>
+
+<div class="main">
+</div>
+
+<div class="main">
+    <h2>Poster abstract</h2>
+    Click to view the poster  
+    <a href="content/compositingLightFieldVideoUsingMPIs_abstract.pdf">abstract.</a>
+</div>
+
+<div class="main">
+    <h2 class="section-title">Technical Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7UUGAguHb10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div> 
+    <br>
+    Video demonstrating the virtual camera editing, volume compositing and segmentation as shown in the poster.
+    <p>
+</div>
+
+<div class="main">
+    <h2>Related work</h2>
+    This work was made possible by  
+    <a href="https://augmentedperception.github.io/deepview/">DeepView</a> View Synthesis with Learned Gradient Descent.
+    <br><br>
+</div>
+<br>
+
+<div class="footer">
+    <div class="footerG">
+        <a href="https://ai.google/"><img src="thumbs/google.png" class="logos"></a>
+    </div>
+    <div class="footerD">
+        <a href="https://vr.google.com/daydream/"><img src="thumbs/daydream.png" class="logos"></a>
+    </div>
+</div>
