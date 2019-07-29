@@ -1,5 +1,5 @@
 <!doctype html><meta charset=utf-8>
-<title>DeepView: View synthesis with learned gradient descent</title>
+<title>Compositing Light field Video Using Multiplane Images</title>
 
 <style>
     body {
@@ -84,27 +84,41 @@
 	position: relative;
     }
     .main {
-	margin: 20px 80px 50px 0px;
+	margin: 20px 80px 20px 0px;
     width: 100%;
     float: left;
 	position: relative;
     }
     .superhero {
     width: 100%;
-    height: 600px;
+    height: 500px;
     position: relative;
     min-width: 800px;
     }
     .title {
 	margin: 50px 0px 0px 0px;
     width: 400px;
-    height: 500px;
+    height: 450px;
     float: left;
 	position: relative;
     }
     .paper {
 	margin: 150px 100px 0px 0px;
     width: 200px;
+    height: 500px;
+    float: right;
+	position: relative;
+    }
+    .poster {
+	margin: 100px 200px 0px 0px;
+    width: 200px;
+    height: 450px;
+    float: right;
+	position: relative;
+    }
+    .posterPaper {
+	margin: 150px 100px 0px 0px;
+    width: 700px;
     height: 500px;
     float: right;
 	position: relative;
@@ -158,7 +172,11 @@
 
 <div class="superhero">
     <div class="title">
-        <h1 class="name"><strong>DeepView</strong><br>View Synthesis with Learned Gradient Descent</h1><br>
+        <h1 class="name"><strong>Compositing Light Field Video</strong><br>Using Multiplane Images</h1><br>
+        
+        <h2 class="names">Matthew DuVall</h2>
+        <span class="email"><a href = "mailto: matthewduvall@google.com" class="pagelink">matthewduvall@google.com</a></span><br>
+        
         <h2 class="names">John Flynn</h2>
         <span class="email"><a href = "mailto: jflynn@google.com" class="pagelink">jflynn@google.com</a></span><br>
         
@@ -168,110 +186,46 @@
         <h2 class="names">Paul Debevec</h2>
         <span class="email"><a href = "mailto: debevec@google.com" class="pagelink">debevec@google.com</a></span><br>
         
-        <h2 class="names">Matthew DuVall</h2>
-        <span class="email"><a href = "mailto: matthewduvall@google.com" class="pagelink">matthewduvall@google.com</a></span><br>
-        
-        <h2 class="names">Graham Fyffe</h2>
-        <span class="email"><a href = "mailto: fyffe@google.com" class="pagelink">fyffe@google.com</a></span><br>
-        
-        <h2 class="names">Ryan Overbeck</h2>
-        <span class="email"><a href = "mailto: rover@google.com" class="pagelink">rover@google.com</a></span><br>
-        
-        <h2 class="names">Noah Snavely</h2>
-        <span class="email"><a href = "mailto: snavely@google.com" class="pagelink">snavely@google.com</a></span><br>
-        
-        <h2 class="names">Richard Tucker</h2>
-        <span class="email"><a href = "mailto: richardt@google.com" class="pagelink">richardt@google.com</a></span><br>
-        
         <h4>Google Inc.</h4>
     </div>
     
-    <div class="paper">
-        <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Flynn_DeepView_View_Synthesis_With_Learned_Gradient_Descent_CVPR_2019_paper.pdf"><img src="thumbs/paper.png" class="img" style="width:300px;height:373px;"></a> Click to view the paper.
+    <div class="poster">
+        <a href="content/compositingLightFieldVideoUsingMPIs_poster.pdf"><img src="thumbs/poster.png" class="img" style="width:400px;height:300px;"></a>Click to view the poster.
     </div>
+</div>
+
+<div class="main">
+    <h2>Publication Links</h2>
+    Poster Abstract
+    <a href="content/compositingLightFieldVideoUsingMPIs_poster.pdf">PDF</a>.<br>
+    Abstract
+    <a href="content/compositingLightFieldVideoUsingMPIs_abstract.pdf">PDF</a>.<br>
+</div>
+
+<div class="main">
+    <h2>Abstract</h2>
+    <p>We present a variety of new compositing techniques using Multiplane Images (MPI’s) derived from footage shot with an inexpensive and portable light field video camera array. The effects include camera stabilization, foreground object removal, synthetic depth of field, and deep compositing. 
+    </p>
+    <p>
+    Traditional compositing is based around layering RGBA images to visually integrate elements into the same scene, and often requires manual 2D and/or 3D artist intervention to achieve realism in the presence of volumetric effects such as smoke or splashing water. We leverage the newly introduced DeepView solver and a light field camera array to generate MPIs stored in the DeepEXR format for compositing with realistic spatial integration and a simple workflow which offers new creative capabilities. We demonstrate using this technique by combining footage that would otherwise be very challenging and time intensive to achieve when using traditional techniques, with minimal artist intervention. 
+    </p>
 </div>
 
 <div class="main">
     <h2 class="section-title">Technical Video</h2>
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/UD7I9gXIVsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7UUGAguHb10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div> 
     <br>
-    Video with synthesized fly-throughs and depth visualizations of the scenes shown in the paper.
+    Video demonstrating the virtual camera editing, volume compositing and segmentation as shown in the poster.
     <p>
 </div>
 
 <div class="main">
-    <h2>Example MPIs in our interactive viewer</h2>
-
-    We present several scenes in an interactive viewer. <br>
-    Note that these were made with a 16-view version of the model in the paper with a sparsity penalty to reduce unneeded content on occluded layers.<br>
-    The Chrome browser is recommended.
-    <p>
-
-    <center>
-        <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_009/rgba_$$.png"><img src="thumbs/scene_009.jpg" class="img"></a><br>Scene 9<br>
-            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_009/rgba_$$.png">low</a> | 
-            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_009/rgba_$$.png">high</a>
-        </div>
-        
-         <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_010/rgba_$$.png"><img src="thumbs/scene_010.jpg" class="img"></a><br>Scene 10<br>
-            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_010/rgba_$$.png">low</a> | 
-            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_010/rgba_$$.png">high</a>
-        </div>
-        
-        <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_023/rgba_$$.png"><img src="thumbs/scene_023.jpg" class="img"></a><br>Scene 23<br>
-            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_023/rgba_$$.png">low</a> | 
-            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_023/rgba_$$.png">high</a>
-        </div>
-        
-         <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_052/rgba_$$.png"><img src="thumbs/scene_052.jpg" class="img"></a><br>Scene 52<br>
-            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_052/rgba_$$.png">low</a> | 
-            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_052/rgba_$$.png">high</a>
-        </div>
-        
-        <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_056/rgba_$$.png"><img src="thumbs/scene_056.jpg" class="img"></a><br>Scene 56<br>
-            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_056/rgba_$$.png">low</a> | 
-            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_056/rgba_$$.png">high</a>
-        </div>
-        
-         <div class=ib><a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_063/rgba_$$.png"><img src="thumbs/scene_063.jpg" class="img"></a><br>Scene 63<br>
-            <a href="mpi/viewer.html?n=24&s=640,480&url=lores/scene_063/rgba_$$.png">low</a> | 
-            <a href="mpi/viewer.html?n=48&s=1260,800&url=hires/scene_063/rgba_$$.png">high</a>
-        </div>
-    
-    </center>
-
-    <p>
-    Here are brief <a href="mpi/instructions.png">instructions</a> for using the viewer.
-</div>
-    
-<div class="main">
-    <h2>Comparison with Soft3D and Zhou et al. on <i>Spaces</i> dataset</h2>
-    <center>
-    <a href="results_spaces/index.html"><img src="thumbs/results_spaces.png" class="img"></a>
-    <br>View a <a href="results_spaces/index.html">comparison</a> on test scenes for 4-view (large baseline) case.
-    </center>
-
+    <h2>Related work</h2>
+    This work was made possible by  
+    <a href="https://augmentedperception.github.io/deepview/">DeepView</a> View Synthesis with Learned Gradient Descent.
     <br><br>
-
-    <h2>Comparison with Soft3D on Kalantari et al. dataset</h2>
-    <center>
-    <a href="results_kalantari/index.html"><img src="thumbs/results_kalantari.png" class="img"></a>
-    <br>View a <a href="results_kalantari/index.html">comparison</a> on test scenes from Kalantari et al.
-    </center>
-</div>
-
-<br><br><br><br>
-
-<div class="main">
-    <h2>Other Studies</h2>
-    Click to see results from 
-    <a href="ablation/index.html">ablation of gradient components</a>, or from <a href="iteration/index.html">varying the number of LGD iterations.</a>
-    <br><br><br>
-    <h2>Extended Training Details</h2>
-    Click to see <a href="training_details.pdf">details</a> of the methods used to reduce RAM during training and inference, as well as the training and loss hyperparameters.
-    <br><br><br>
 </div>
 <br>
 
